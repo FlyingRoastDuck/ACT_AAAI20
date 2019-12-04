@@ -43,7 +43,7 @@ If you find this code useful in your research, please consider citing:
 }
 ```
 
-## Acknowlegments
+## Acknowledgments
 Our code is based on [open-reid](https://github.com/Cysu/open-reid) and [Adaptive-ReID](https://arxiv.org/abs/1807.11334), 
 if you use our code, please also cite their paper.
 ```
