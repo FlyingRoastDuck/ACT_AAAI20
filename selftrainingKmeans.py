@@ -203,13 +203,13 @@ def main(args):
             source_features = 0
         else:
             # get source datas' feature
-            source_features, _ = extract_features(model, src_extfeat_loader, print_freq=args.print_freq, numStripe=None)
+            source_features, _ = extract_features(model, src_extfeat_loader, print_freq=args.print_freq)
             # synchronization feature order with src_dataset.train
             source_features = torch.cat([source_features[f].unsqueeze(0) for f, _, _ in src_dataset.train], 0) 
 
         # extract training images' features
         print('Iteration {}: Extracting Target Dataset Features...'.format(iter_n+1))
-        target_features, tarNames = extract_features(model, tgt_extfeat_loader, print_freq=args.print_freq, numStripe=None)
+        target_features, tarNames = extract_features(model, tgt_extfeat_loader, print_freq=args.print_freq)
         # synchronization feature order with dataset.train
         target_features = torch.cat([target_features[f].unsqueeze(0) for f, _, _ in tgt_dataset.trainval], 0) 
         target_real_label = np.asarray([tarNames[f].unsqueeze(0) for f, _, _ in tgt_dataset.trainval]) 
