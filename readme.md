@@ -27,7 +27,7 @@ market1501 (for Market1501), dukemtmc (for DukeMTMC-reID), cuhk03 (for CUHK03).
 3. If you want to train from scratch, please train source model and adapted model by using code in 
 [Adaptive-ReID](https://github.com/LcDog/DomainAdaptiveReID) and follow #2.
 
-## Adaptation with other structures using co-teaching.
+## Adaptation with other co-teaching-like structures.
 To reproduce the results in Tab. 2 of our paper, please run selftrainingRCT.py and selftrainingCT.py in similar way.
 
 ## Adaptation with other clustering methods.
