@@ -8,7 +8,7 @@ Code for AAAI 2020 paper [Asymmetric Co-Teaching for Unsupervised Cross Domain P
 * python 3.7
 * Server with 4 GPUs
 * Market1501, DukeMTMC-reID and other datasets.
-* Other necessary packages listed in requirements.txt
+* Other necessary packages listed in [requirements.txt](requirements.txt)
 
 ## Adaptation with ACT
 1. Download all necessary datasets and move them to 'data' by following instructions in 'data/readme.md'
@@ -35,10 +35,11 @@ To reproduce Tab.3 of our paper, run selftrainingKmeans.py (co-teaching version)
 
 If you find this code useful in your research, please consider citing:
 ```
-@article{yang2020asy,
-  title={Asymmetric Co-Teaching for Unsupervised Cross Domain Person Re-Identification},
+@inproceedings{yang2020asymmetric,
+  title={Asymmetric Co-Teaching for Unsupervised Cross-Domain Person Re-Identification.},
   author={Yang, Fengxiang and Li, Ke and Zhong, Zhun and Luo, Zhiming and Sun, Xing and Cheng, Hao and Guo, Xiaowei and Huang, Feiyue and Ji, Rongrong and Li, Shaozi},
   booktitle={AAAI},
+  pages={12597--12604},
   year={2020}
 }
 ```
