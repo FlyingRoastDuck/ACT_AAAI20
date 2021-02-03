@@ -17,7 +17,6 @@ def extract_features(model, data_loader, print_freq=1):
 
     features = OrderedDict()
     labels = OrderedDict()
-    gFeat = OrderedDict()
 
     end = time.time()
     for i, (imgs, fnames, pids, _) in enumerate(data_loader):

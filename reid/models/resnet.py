@@ -13,6 +13,7 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
            'resnet152']
 
+
 class ResNet(nn.Module):
     __factory = {
         18: torchvision.models.resnet18,
@@ -22,8 +23,8 @@ class ResNet(nn.Module):
         152: torchvision.models.resnet152,
     }
 
-    def __init__(self, depth, checkpoint=None, pretrained=True, num_features=2048, 
-                    dropout=0.1, num_classes=0, numCams = 0):
+    def __init__(self, depth, checkpoint=None, pretrained=True, num_features=2048,
+                 dropout=0.1, num_classes=0, numCams=0):
         super(ResNet, self).__init__()
 
         self.depth = depth
@@ -53,7 +54,7 @@ class ResNet(nn.Module):
         init.constant(self.feat_bn.weight, 1)
         init.constant(self.feat_bn.bias, 0)
 
-        #x2 classifier
+        # x2 classifier
         self.classifier_x2 = nn.Linear(self.num_features, self.num_classes)
         init.normal(self.classifier_x2.weight, std=0.001)
         init.constant(self.classifier_x2.bias, 0)
@@ -74,8 +75,8 @@ class ResNet(nn.Module):
         x2 = self.feat(x2)
         x2 = self.feat_bn(x2)
         x2 = self.relu(x2)
-        if self.num_classes!=0:
-            return x1, x2, self.classifier_x2(x2) # pool5, fc2048, classifier
+        if self.num_classes != 0:
+            return x1, x2, self.classifier_x2(x2)  # pool5, fc2048, classifier
         return x1, x2
 
     def reset_params(self):
@@ -111,4 +112,3 @@ def resnet101(**kwargs):
 
 def resnet152(**kwargs):
     return ResNet(152, **kwargs)
-
