@@ -6,6 +6,6 @@ tqdm==4.32.2
 torchvision==0.2.0
 scipy==1.1.0
 h5py==2.9.0
-Pillow==6.2.1
+Pillow==8.3.2
 six==1.13.0
 scikit_learn==0.21.3
